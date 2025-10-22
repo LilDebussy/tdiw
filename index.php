@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title> UAB/Enginyeria </title>
 	    <link rel="stylesheet" type="text/css" href="css/uab.css">
-	<!-- completa -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    	<script src="./js/funcions.js"></script>
     </head>
     <body>
         <?php
