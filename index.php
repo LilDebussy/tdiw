@@ -9,7 +9,15 @@
     </head>
     <body>
         <?php
-		    //completa
+		    include_once __DIR__ . "/connectaBD.php";  
+            $con = connectaBD();
+            $query_graus = "SELECT id,nom FROM graus";
+            $resultSet_graus = pg_query($con, $query_graus) or die("Error sql graus");
+            $rows_graus = pg_fetch_all($resultSet_graus);
+            $query_mencions = "SELECT id,nom FROM mencions WHERE grau=1";
+            $resultSet_mencions = pg_query($con, $query_mencions) or die("Error sql mencions");
+            $rows_mencions = pg_fetch_all($resultSet_mencions);
+                pg_close($con);
         ?>
         <div id="layout">
             <!-- SECCIÓ 1 - Capçalera -->
@@ -51,7 +59,11 @@
                         Grau:
                         <select name="grau" id="graus">
                         <?php
-                            //completa
+                            foreach($rows_graus as $row) {
+                        ?>
+                            <option value=<?= $row['id'] ?>><? $row['nom'] ?></option>
+                        <?php
+                            }
                         ?>
                         </select>
                         <p>Tria la menció que t'atreu més:<p>
