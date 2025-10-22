@@ -1,3 +1,3 @@
 $(document).ready(function(){
-    //completa
+    $("#mencions").load("./mencions.php?grau=" + $("#graus").val())
 });
