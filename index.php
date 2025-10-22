@@ -59,9 +59,10 @@
                         Grau:
                         <select name="grau" id="graus">
                         <?php
-                            foreach($rows_graus as $row) {
+                            foreach($rows_graus as $row){
+                                //echo "<option value='" . $row['id'] . "'>" . $row['nom'] . "</option>\n";
                         ?>
-                            <option value=<?= $row['id'] ?>><? $row['nom'] ?></option>
+                            <option value=<?= $row['id'] ?>><?= $row['nom'] ?></option>
                         <?php
                             }
                         ?>
@@ -69,7 +70,9 @@
                         <p>Tria la menció que t'atreu més:<p>
                         <select name="mencio" id="mencions">
                         <?php
-                            //completa
+                            foreach($rows_mencions as $row2){
+                                echo "<option value='" . $row2['id'] . "'>" . $row2['nom'] . "</option>\n";
+                            }
                         ?>
                         </select>
                         <br /><br />
